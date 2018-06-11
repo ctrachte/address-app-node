@@ -8,7 +8,7 @@ module.exports = class MenuController {
   }
 
   clear(){
-    console.log('hello from clear');
+    console.log("\x1Bc");
   }
-  
+
 }
