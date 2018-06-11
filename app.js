@@ -1,9 +1,5 @@
 console.log(process.argv);
 
-// only log the input args
+// use inquirer to interpret user input:
 
-for (let arg of process.argv) {
-  if (arg[0] !== '/') {
-    console.log(arg);
-  }
-}
+const inquirer = require('inquirer');
