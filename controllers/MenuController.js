@@ -17,13 +17,28 @@ module.exports = class MenuController {
   }
 
   main(){
-    console.log('hello from main');
+    console.log(`Welcome to AddressBloc!`);
+    inquirer.prompt(this.mainMenuQuestions).then((response) => {
+      switch(response.mainMenuChoice){
+        case "Add new contact":
+          this.addContact();
+          break;
+        case "Exit":
+          this.exit();
+        default:
+          console.log("Invalid input");
+          this.main();
+      }
+    })
+    .catch((err) => {
+      console.log(err);
+    });
   }
 
   clear(){
     console.log("\x1Bc");
   }
-  
+
   addContact(){
     this.clear();
     console.log('addContact called');
