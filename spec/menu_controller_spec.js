@@ -1,3 +1,4 @@
+ const MenuController = require("../controllers/MenuController");
 // #1
  describe("MenuController", () => {
    describe("#getContactCount()", () => {
