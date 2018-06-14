@@ -4,7 +4,7 @@
   "description": "A application to model an address book build with Node",
   "main": "app.js",
   "scripts": {
-    "test": "export NODE_ENV=test && jasmine"
+    "test": "set NODE_ENV=test && jasmine"
   },
   "author": "Caleb Trachte",
   "license": "ISC",
