@@ -2,13 +2,12 @@
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    queryInterface.addColumn(
-      'Contacts',
+    queryInterface.addColumn({
+        tableName: 'Contacts',
+        schema: 'public'
+      },
       'email',
-      {
-        type: Sequelize.STRING,
-        allowNull: false
-      }
+      Sequelize.STRING
     )
   },
 
