@@ -1,7 +1,6 @@
 const inquirer = require("inquirer");
 
 module.exports = class ContactController {
-
   constructor(){
     this.contacts = [];
   }
@@ -9,5 +8,4 @@ module.exports = class ContactController {
   addContact(name, phone){
     this.contacts.push({name, phone});
   }
-
 }
