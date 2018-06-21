@@ -29,12 +29,22 @@ module.exports = class ContactController {
         }
       }
     ];
+    this.searchQuestions = [
+      {
+        type: "input",
+        name: "name",
+        message: "Name of contact to search - ",
+        validate(val){
+          return val !== "";
+        }
+      }
+    ];
   }
 
   addContact(name, phone, email){
     return Contact.create({name, phone, email})
   }
-  
+
   getContacts(){
     return Contact.findAll()
   }
