@@ -34,9 +34,11 @@ module.exports = class ContactController {
   addContact(name, phone, email){
     return Contact.create({name, phone, email})
   }
+  
   getContacts(){
     return Contact.findAll()
   }
+
   iterativeSearch(contacts, target){
     for(let contact of contacts){
       if(contact.name.toLowerCase() === target.toLowerCase()){
@@ -45,6 +47,7 @@ module.exports = class ContactController {
     }
     return null;
   }
+
   binarySearch(contacts, target){
     let min = 0;
     let max = contacts.length - 1;
@@ -68,4 +71,11 @@ module.exports = class ContactController {
 
     return null;
   }
+
+  search(name){
+    return Contact.findOne({
+      where: {name}
+    });
+  }
+
 }
