@@ -70,6 +70,26 @@ module.exports = class MenuController {
     });
   }
 
+  getContacts(){
+        this.clear();
+
+        this.book.getContacts().then((contacts) => {
+          for (let contact of contacts) {
+            console.log(`
+            ---------------
+            name: ${contact.name}
+            phone number: ${contact.phone}
+            email: ${contact.email}
+            ---------------`
+            );
+          }
+          this.main();
+        }).catch((err) => {
+          console.log(err);
+          this.main();
+        });
+      }
+
   exit(){
     console.log("Thanks for using AddressBloc!");
     process.exit();
