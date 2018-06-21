@@ -116,6 +116,24 @@ module.exports = class MenuController {
 
   showContact(contact){
     this._printContact(contact);
+    inquirer.prompt(this.book.showContactQuestions)
+    .then((answer) => {
+      switch(answer.selected){
+        case "Delete contact":
+          this.delete(contact);
+          break;
+        case "Main menu":
+          this.main();
+          break;
+        default:
+          console.log("Something went wrong.");
+          this.showContact(contact);
+      }
+    })
+    .catch((err) => {
+      console.log(err);
+      this.showContact(contact);
+    });
   }
 
   _printContact(contact){
