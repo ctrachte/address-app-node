@@ -37,4 +37,7 @@ module.exports = class ContactController {
   getContacts(){
     return Contact.findAll()
   }
+  iterativeSearch(contacts, target){
+    //method definition
+  }
 }
